@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PoModule } from '@portinari/portinari-ui';
 import { RouterModule } from '@angular/router';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     PoModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
