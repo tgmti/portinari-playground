@@ -1,0 +1,24 @@
+<po-page-list p-title="Chamados">
+  <po-list-view
+    p-hide-select-all
+    p-property-title="titulo"
+    p-select
+    [p-items]="chamados"
+    (p-title-action)="showDetailModal($event)"
+  >
+    <ng-template p-list-view-content-template let-item>
+      <div class="po-row">
+        <po-info class="po-md-6" p-label="numero" [p-value]="item.numero"></po-info>
+        <po-info class="po-md-6" p-label="dataAbertura" [p-value]="item.dataAbertura"></po-info>
+      </div>
+    </ng-template>
+
+    <ng-template p-list-view-detail-template let-item>
+      <div class="po-row">
+        <po-info class="po-md-12" p-label="descricao" [p-value]="item.descricao"></po-info>
+      </div>
+    </ng-template>
+
+  </po-list-view>
+
+</po-page-list>

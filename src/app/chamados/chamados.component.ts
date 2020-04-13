@@ -1,19 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { ChamadosService } from '../services/chamados.service';
 
 @Component({
   selector: 'app-chamados',
-  template: `
-    <p>
-      Lista de Chamados
-    </p>
-  `,
-  styleUrls: ['./chamados.component.css']
+  templateUrl: './chamados.component.html',
+  styleUrls: ['./chamados.component.css'],
+  providers: [ChamadosService]
 })
 export class ChamadosComponent implements OnInit {
 
-  constructor() { }
+  chamados: Array<any>;
+
+  constructor(
+    private chamadosService: ChamadosService
+  ) { }
 
   ngOnInit(): void {
+    this.chamados = this.chamadosService.getChamados();
+  }
+
+  showDetailModal(item) {
+    // this.setModalItem(item);
+    // this.detailsModalElement.open();
+    alert("Abrir");
   }
 
 }
