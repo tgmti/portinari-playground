@@ -1,22 +1,16 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChamadosService {
 
-  private chamados = this.getChamadosTeste();
+  private readonly URL_API = 'https://my-json-server.typicode.com/tgmti/portinari-playground/chamados';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getChamados() {
-    return this.chamados;
-  }
-
-  private getChamadosTeste() {
-    return [
-      { numero: '12345', titulo: 'teste de abertura de chamado', descricao: 'descricao longa', dataAbertura: '2020-03-01', url: '12345' },
-      { numero: '12346', titulo: 'teste de abertura 02', descricao: 'descricao longa 2 ', dataAbertura: '2020-03-02', url: '12345' },
-    ];
+    return this.http.get(this.URL_API);
   }
 }

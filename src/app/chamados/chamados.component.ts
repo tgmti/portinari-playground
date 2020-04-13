@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChamadosService } from '../services/chamados.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-chamados',
@@ -9,7 +10,7 @@ import { ChamadosService } from '../services/chamados.service';
 })
 export class ChamadosComponent implements OnInit {
 
-  chamados: Array<any>;
+  chamados: Observable<any>;
 
   constructor(
     private chamadosService: ChamadosService

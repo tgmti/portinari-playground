@@ -3,7 +3,7 @@
     p-hide-select-all
     p-property-title="titulo"
     p-select
-    [p-items]="chamados"
+    [p-items]="chamados | async"
     (p-title-action)="showDetailModal($event)"
   >
     <ng-template p-list-view-content-template let-item>
