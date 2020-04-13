@@ -1,38 +1,29 @@
-<po-list-view
-  p-hide-select-all
-  p-property-title="titulo"
-  p-select
-  [p-items]="chamados | async"
-  (p-title-action)="showDetailModal($event)"
->
-  <ng-template p-list-view-content-template let-item>
-    <div class="po-row">
-      <po-info class="po-md-4" p-label="Número" [p-value]="item.numero"></po-info>
-      <po-info class="po-md-4" p-label="Status" [p-value]="item.status"></po-info>
-      <po-info class="po-md-4" p-label="Solicitante" [p-value]="item.solicitante"></po-info>
-      <po-info class="po-md-6" p-label="Abertura" [p-value]="item.dataAbertura"></po-info>
-      <po-info class="po-md-6" p-label="Hora" [p-value]="item.horaAbertura"></po-info>
-    </div>
-  </ng-template>
+<po-page-list p-title="Chamados" [p-actions]="pageActions" >
+  <po-list-view
+    p-hide-select-all
+    p-property-title="titulo"
+    p-select
+    [p-items]="chamados | async"
+    (p-title-action)="showDetailModal($event)"
+  >
+    <ng-template p-list-view-content-template let-item>
+      <div class="po-row">
+        <po-info class="po-md-4" [p-orientation]="infoOrientation" p-label="Número" [p-value]="item.numero"></po-info>
+        <po-info class="po-md-4" [p-orientation]="infoOrientation" p-label="Status" [p-value]="item.status"></po-info>
+        <po-info class="po-md-4" [p-orientation]="infoOrientation" p-label="Solicitante" [p-value]="item.solicitante"></po-info>
+        <po-info class="po-md-6" [p-orientation]="infoOrientation" p-label="Abertura" [p-value]="item.dataAbertura"></po-info>
+        <po-info class="po-md-6" [p-orientation]="infoOrientation" p-label="Hora" [p-value]="item.horaAbertura"></po-info>
+      </div>
+    </ng-template>
 
-  <ng-template p-list-view-detail-template let-item>
-    <div class="po-row">
-      <po-info class="po-md-12" p-label="descricao" [p-value]="item.descricao"></po-info>
-    </div>
-    <div class="po-row">
-      <po-info class="po-md-12" p-label="descricao" [p-value]="item.descricao"></po-info>
-    </div>
-  </ng-template>
+    <ng-template p-list-view-detail-template let-item>
+      <div class="po-row">
+        <po-info class="po-md-12" p-label="descricao" [p-value]="item.descricao"></po-info>
+      </div>
+      <div class="po-row">
+        <po-info class="po-md-12" p-label="descricao" [p-value]="item.descricao"></po-info>
+      </div>
+    </ng-template>
 
-<!--
-  {
-    "numero":"007001",
-    "solicitante":"caroline.tizoni",
-    "titulo":"AUDIO COMPUTADOR",
-    "horaAbertura":"17:28",
-    "dataAbertura":"20200407",
-    "descricao":"CONFORME CONVERSADO PRECISO QUE SEJA AJUSTADO O AUDIO E O MICROFONE NO MEUPC"
-  },
- -->
-
-</po-list-view>
+  </po-list-view>
+</po-page-list>

@@ -3,9 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home',
   template: `
-    <p>
-      home works!
-    </p>
+    <po-page-default p-title="Home DashBoard">
+      <p>
+        home works!
+      </p>
+    </po-page-default>
   `,
   styleUrls: ['./home.component.css']
 })

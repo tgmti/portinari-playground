@@ -1,0 +1,30 @@
+<po-page-edit
+  p-title="Novo Chamado"
+  [p-disable-submit]="formEditChamado.invalid"
+  (p-cancel)="cancel()"
+  (p-save)="save()"
+>
+
+  <form #formEditChamado="ngForm">
+
+    <div class="po-row">
+      <po-number class="po-md-4" name="numero" [(ngModel)]="numeroChamado" p-clean p-label="Número do Chamado" p-required> </po-number>
+      <po-input class="po-md-4" name="solicitante" [(ngModel)]="solicitanteChamado" p-clean p-label="Solcitante"> </po-input>
+      <po-email class="po-md-4" name="email" [(ngModel)]="emailSolicitanteChamado" p-clean p-label="Email" p-required> </po-email>
+    </div>
+
+    <div class="po-row">
+      <po-datepicker class="po-md-4" name="dataAberturaChamado" [(ngModel)]="dataAberturaChamado" p-clean p-label="Abertura">
+      </po-datepicker>
+      <po-input class="po-md-4" name="horaAberturaChamado" [(ngModel)]="horaAberturaChamado" p-clean p-label="Hora"> </po-input>
+      <po-input class="po-md-4" name="statusChamado" [(ngModel)]="statusChamado" p-clean p-label="Status"> </po-input>
+    </div>
+
+    <div class="po-row">
+      <po-textarea class="po-md-12" name="descricaoChamado" [(ngModel)]="descricaoChamado" p-label="Descrição" p-readonly p-rows="6">
+      </po-textarea>
+    </div>
+
+  </form>
+
+</po-page-edit>
